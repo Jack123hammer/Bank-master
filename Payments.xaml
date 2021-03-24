@@ -13,7 +13,7 @@
         <Label Content="Сумма" HorizontalAlignment="Left" Margin="345,90,0,0" VerticalAlignment="Top"/>
         <Label Content="Получатель" HorizontalAlignment="Left" Margin="345,149,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txbx_reciever" HorizontalAlignment="Left" Height="23" Margin="451,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="446,334,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="574,239,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>
