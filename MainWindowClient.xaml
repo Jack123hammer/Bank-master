@@ -1,0 +1,56 @@
+﻿<Window x:Class="Bank.MainWindowClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bank"
+        mc:Ignorable="d"
+        Title="Главное окно клиента" Height="768" Width="1366" WindowStartupLocation="CenterScreen" Icon="bank.png">
+    <Grid>
+        <Button x:Name="btn_exit" Content="Сменить учетную запись" VerticalAlignment="Top" Height="24" HorizontalAlignment="Right" Click="btn_exit_Click" Margin="0,10,10,0"/>
+        <TabControl Margin="0,34,0,0">
+            <TabItem Header="Счета, Средства, Валюта">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dg_client" AutoGenerateColumns="False" IsReadOnly="True" Margin="-3,0,300,0" SelectionChanged="dg_client_SelectionChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="Scor" Binding="{Binding ID_Score}" Width="*" Header="Номер счета"/>
+                            <DataGridTextColumn  Binding="{Binding List_of_types_of_agreements.name_of_type}" Width="*" Header="Тип договора"/>
+                            <DataGridTextColumn  Binding="{Binding amount}" Width="*" Header="Сумма"/>
+                            <DataGridTextColumn  Binding="{Binding type_of_currency}" Width="*" Header="Валюта"/>
+                            <DataGridTextColumn  Binding="{Binding Account.phone_number}" Width="*" Header="Телефон"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="Btn_payments" Content="Платежи" HorizontalAlignment="Left" Margin="1070,44,0,0" VerticalAlignment="Top" Width="258" Click="Btn_payments_Click"/>
+                    <Button x:Name="Btn_transfer" Content="Переводы&#xD;&#xA;" HorizontalAlignment="Left" Margin="1070,100,0,0" VerticalAlignment="Top" Width="258"/>
+                    <TextBox x:Name="tb_1" HorizontalAlignment="Left" Height="129" Margin="1057,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="271"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="История транзакций">
+                <Grid Background="#FFE5E5E5">
+
+                    <DataGrid x:Name="DG_History" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,0,300,-2">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding ID_transaction}" Width="*" Header="ИД"/>
+                            <DataGridTextColumn Binding="{Binding type_of_currency}" Width="*" Header="Тип валюты"/>
+                            <DataGridTextColumn Binding="{Binding type_of_transaction}" Width="*" Header="Тип транзакции"/>
+                            <DataGridTextColumn Binding="{Binding amount_of_transaction}" Width="*" Header="Количество"/>
+                            <DataGridTextColumn Binding="{Binding date_time_of_transaction}" Width="*" Header="Дата и время"/>
+                            <DataGridTextColumn Binding="{Binding Sender.id_score}" Width="*" Header="Счёт отправителя"/>
+                            <DataGridTextColumn Binding="{Binding Sender.Bank_account_number.Account.Passport_data.last_name}" Header="Фамилия отправителя" Width="*"/>
+                            <DataGridTextColumn Binding="{Binding Sender.Bank_account_number.Account.Passport_data.first_name}" Header="Имя отправителя" Width="*"/>
+                            <DataGridTextColumn Binding="{Binding Reciever.id_score}" Width="*" Header="Счёт получателя"/>
+                            <DataGridTextColumn Binding="{Binding Reciever.Bank_account_number.Account.Passport_data.last_name}" Header="Фамилия получателя" Width="*"/>
+                            <DataGridTextColumn Binding="{Binding Reciever.Bank_account_number.Account.Passport_data.first_name}" Header="Имя получателя" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="Btn_search_history_currency" Content="Поиск" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Height="Auto"/>
+                    <Button x:Name="Btn_search_history_date" Content="Поиск" HorizontalAlignment="Right" Margin="0,42,10,0" VerticalAlignment="Top" Height="Auto"/>
+                    <ComboBox x:Name="CbBx_History_currency" HorizontalAlignment="Right" Margin="0,10,90,0" VerticalAlignment="Top" Width="205"/>
+                    <DatePicker x:Name="Date_time_of_transaction" Margin="0,44,128,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="167" Height="25"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Доп. Операции"/>
+        </TabControl>
+
+    </Grid>
+</Window>

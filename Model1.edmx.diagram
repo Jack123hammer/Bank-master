@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0ccd47d68f004458b3150f09cdee636b" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.Account" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Bank_account_number" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Employers" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Entity_clients" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.List_of_position" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.List_of_types_of_agreements" Width="1.5" PointX="6" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Passport_data" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Reciever" Width="1.5" PointX="10.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Sender" Width="1.5" PointX="10.5" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="2.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Transaction" Width="1.5" PointX="12.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Types_of_clients" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_Account_Entity_clients" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Account_Passport_data" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Account_Types_of_clients" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Bank_account_number_Account_physical" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Bank_account_number_List_of_types_of_agreements" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Reciever_Bank_account_number" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Sender_Bank_account_number" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Employers_List_of_position" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Employers_Passport_data" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Reciever_Passport_data" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Sender_Passport_data" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Transaction_Reciever" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Transaction_Sender" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
